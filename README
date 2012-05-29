@@ -1,5 +1,4 @@
-go-wikimedia is an interface to the Wikimedia API--that is, Wikipedia,
-Wiktionary, and so on.
+go-wikimedia is an interface to the Wikimedia (Wikipedia, Wiktionary, etc.) API.
 
 It is a work in progress currently used to build applications that query
 Wikipedia and Wiktionary in different languages.
@@ -17,22 +16,22 @@ or http://go.pkgdoc.org/github.com/pmylund/go-wikimedia
 
 import (
 	"fmt"
-        "github.com/pmylund/go-wikimedia"
+	"github.com/pmylund/go-wikimedia"
 	"net/url"
 )
 
 w, err := wikimedia.New("http://en.wikipedia.org/w/api.php")
 if err != nil {
-        ...
+	...
 }
 f := url.Values{
-        "action": {"query"},
-        "prop":   {"extracts"},
-        "titles": {"Osmosis|Procrastination"},
+	"action": {"query"},
+	"prop":   {"extracts"},
+	"titles": {"Osmosis|Procrastination"},
 }
 res, err := d.w.Query(f)
 if err != nil {
-        return nil, err
+	return nil, err
 }
 for _, v := range res.Query.Pages {
 	fmt.Println(v.Title, "-", v.Extract)
