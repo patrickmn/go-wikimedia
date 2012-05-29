@@ -8,6 +8,7 @@ import (
 	"time"
 )
 
+// A Wikimedia API response
 type ApiResponse struct {
 	Query         ApiQuery         `json:"query"`
 	QueryContinue ApiQueryContinue `json:"query-continue"`
