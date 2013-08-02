@@ -29,7 +29,7 @@ f := url.Values{
 	"prop":   {"extracts"},
 	"titles": {"Osmosis|Procrastination"},
 }
-res, err := d.w.Query(f)
+res, err := w.Query(f)
 if err != nil {
 	return nil, err
 }
